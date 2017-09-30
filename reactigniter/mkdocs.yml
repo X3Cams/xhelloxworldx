@@ -1,0 +1,34 @@
+site_name: CodeReactor Responsive Codeigniter
+site_description: "How did you wind up in this shit?! You know what, don't tell me. I'm better of with the version I have in my head."
+site_author: AngelXAces
+copyright:  2017 - Angel Aces - All Rights Reserved
+remote_branch: develope
+repo_url: https://github.com/angelxaces/Angel-s-CodeReactor
+repo_name: "Angel's CodeReactor"
+pages:
+    - Home: index.md
+    - BERT: about.md
+    - 'X3Cams':
+        - 'X3Cams': 'x3cams/index.md'
+        - 'Homepage': 'x3cams/home.md'
+        - 'Model Room': 'x3cams/profiles.md'
+        - 'Video Players': 'x3cams/video.md'
+        - 'Misc Functions': 'x3cams/misc_functions.md'
+    - Angel:
+        - 'About Angel': 'angel/index.md'
+        - 'Notes, Thoughts, Things': 'angel/messages.md'
+    - The Shittiest Docs: The Shittiest Docs.md
+theme: readthedocs
+theme_dir: /usr/local/Cellar/mkdocs/0.16.3/libexec/lib/python2.7/site-packages
+docs_dir: /Users/Angel/Sites/x3cams/reactigniter/docs/
+site_dir: /Users/Angel/Sites/x3cams/reactigniter/site/
+extra_css:
+    - assets/extra.css
+    - assets/styles/default.css
+    - assets/styles/monokai-sublime.css
+extra_javascript:
+    - assets/custom.js
+    - assets/highlight.pack.js
+use_directory_urls: true
+strict: false
+dev_addr: black.dynet.com:8000

@@ -1,0 +1,26 @@
+{
+  "name": "0065-licensed-to-maim",
+  "authors": [
+    "Angel \"AngelXAces\" Aces <arjb23@gmail.com>"
+  ],
+  "description": "A concoction of various SVG graphics",
+  "main": "style.css",
+  "keywords": [
+    "0065-licensed-maim",
+    "svg",
+    "graphics"
+  ],
+  "license": "MIT",
+  "homepage": "http://example.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_source": "/Users/Angel/Sites/air/bower_components/0065-Licensed-to-Maime",
+  "_target": "*",
+  "_originalSource": "./",
+  "_direct": true
+}

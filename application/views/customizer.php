@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+    <title>Bootstrap Live Customizer v3.3.7</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customize Bootstrap's LESS variables and see the results live on the page, then download the compiled bootstrap.css to use it in your website!">
+
+    <meta property="og:title" content="Bootstrap Live Customizer">
+    <meta property="og:image" content="http://bootstrap-live-customizer.com/img/bootstrap-live-customizer2.png">
+    <meta property="og:site_name" content="Bootstrap Live Customizer">
+    <meta property="og:description" content="Customize Bootstrap's LESS variables and see the results live on the page, then download the compiled bootstrap.css to use it in your Bootstrap website!">
+    <meta property="og:url" content="http://bootstrap-live-customizer.com">
+    <meta property="og:type" content="product">
+
+
+
+    <link rel="shortcut icon" href="http://bootstrap-live-customizer.com/favicon.ico">
+
+    <link rel="stylesheet" href="http://bootstrap-live-customizer.com/dist/live-less-theme-customizer.min.css">
+    <style>
+        #variablescontainer {
+            padding-bottom: 0;
+        }
+        #variablescontainer .panel:last-of-type {
+            margin-bottom: 0;
+        }
+    </style>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1962204525593717",
+        enable_page_level_ads: true
+      });
+    </script>
+  </head>
+  <body>
+    <div id="less-live-editor-preview"></div>
+
+    <div id="less-live-editor-sidebar" class="cell">
+      <ul class="sidebar-menu">
+        <li><a id="selecttheme" data-toggle="modal" data-target="#thememodal"><span class="glyphicon glyphicon-tint"></span> Select predefined theme</a></li>
+        <li><a id="customlessbutton" data-backdrop="static" data-toggle="modal" data-target="#customlessmodal"><span class="glyphicon glyphicon-pencil"></span> Edit <code>theme.less</code></a></li>
+        <li><a id="cssoutbutton" data-toggle="modal" data-target="#cssoutmodal"><span class="glyphicon glyphicon-sound-stereo"></span> Get <code>bootstrap.css</code></a></li>
+        <li><a id="lessoutbutton" data-toggle="modal" data-target="#lessoutmodal"><span class="glyphicon glyphicon-export"></span> Get <code>variables.less</code></a></li>
+        <li><a id="importlessbutton" data-toggle="modal" data-target="#importlessmodal"><span class="glyphicon glyphicon-import"></span> Import LESS variables</a></li>
+        <li><a id="configbutton" data-toggle="modal" data-target="#configmodal"><span class="glyphicon glyphicon-cog"></span> Configure</a></li>
+        <li><a id="resetbutton"><span class="glyphicon glyphicon-repeat"></span> Reset variables to defaults</a></li>
+        <li><a id="resetcustomlessbutton"><span class="glyphicon glyphicon-repeat"></span> Reset custom LESS code</a></li>
+      </ul>
+      <div id="filtered-variables" class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title nocollapse">Related variables <button type="button" class="close">&times;</button></h3></div>
+        <div class="panel-body"></div>
+      </div>
+      <div id="variablescontainer"></div>
+    </div>
+
+    <div class="modal bs-modal-lg" id="thememodal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Select a <a href="http://bootswatch.com/" target="_blank">bootswatch</a> theme:</h4>
+          </div>
+          <div class="modal-body expanded">
+            Loading theme data...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal bs-modal-lg" id="customlessmodal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Custom LESS code <small>applied after bootstrap's LESS files, can use any of the variables and mixins</small></h4>
+          </div>
+          <div class="modal-body expanded">
+            <p>
+              <input type="file" id="importthemelessinput">
+            </p>
+            <p>
+              <textarea class="less-live-editor-textarea-customless"></textarea>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button id="clearthemeless" type="button" class="btn btn-primary pull-left">Clear</button>
+            <button id="loaddefaultthemeless" type="button" class="btn btn-primary pull-left">Load Bootstrap's default theme.less</button>
+            <button id="downloadthemeless" type="button" class="btn btn-primary">Download</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal bs-modal-lg" id="cssoutmodal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Compiled CSS <small>from customized LESS</small></h4>
+          </div>
+          <div class="modal-body expanded noscroll">
+            <textarea class="less-live-editor-textarea-cssout" readonly="readonly"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button id="cssdownload" type="button" class="btn btn-primary" data-dismiss="modal">Download</button>
+            <button id="cssdownloadminified" type="button" class="btn btn-primary" data-dismiss="modal">Download minified</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal bs-modal-lg" id="lessoutmodal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Customized LESS variables</h4>
+          </div>
+          <div class="modal-body expanded noscroll">
+            <textarea class="less-live-editor-textarea-lessout" readonly="readonly"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button id="lessdownload" type="button" class="btn btn-primary" data-dismiss="modal">Download</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal bs-modal-lg" id="importlessmodal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Import variables <small>paste or load previously saved data</small></h4>
+          </div>
+          <div class="modal-body expanded noscroll">
+            <textarea class="less-live-editor-textarea-importless"></textarea>
+          </div>
+          <div class="modal-footer">
+            <input type="file" id="importlessinput" class="pull-left">
+            <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+            <button type="button" id="doimportfromtext" class="btn btn-default" data-dismiss="modal">Import</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal bs-modal-lg" id="configmodal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Configuration</h4>
+          </div>
+          <div class="modal-body">
+
+            <form class="form-horizontal" role="form">
+
+              <div class="form-group">
+                <label class="col-xs-3 text-right">CSS download filename:</label>
+                <div class="col-xs-4">
+                  <input type="text" class="form-control" data-name="config_cssoutname" name="config-cssoutname" placeholder="theme.css">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-xs-3 text-right">CSS minified filename:</label>
+                <div class="col-xs-4">
+                  <input type="text" class="form-control" data-name="config_cssoutname_minified" name="config-cssoutname_minified" placeholder="theme.min.css">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-xs-3 text-right">LESS variables filename:</label>
+                <div class="col-xs-9">
+                  <input type="text" class="form-control" data-name="config_lessoutname" name="config-lessoutname" placeholder="variables.less">
+
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label style="font-weight:normal;cursor:pointer;">
+                        <input type="checkbox" data-name="config_savecomments" name="config-savecomments"> Save comments
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <label style="font-weight:normal;cursor:pointer;">
+                        <input type="checkbox" data-name="config_exportcustomizationsonly" name="config-exportcustomizationsonly"> Save only customized variables
+                      </label>
+
+                      <div class="help-block">
+                        It is easier to upgrade Bootstrap if checked, as you can overwrite the original <code>variables.less</code> file and simply include the customized variables after that to overwrite the default values with your customizations.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-xs-3 text-right">Custom LESS code filename:</label>
+                <div class="col-xs-4">
+                  <input type="text" class="form-control" data-name="config_themelessoutname" name="config-themelessoutname" placeholder="theme.less">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-xs-3 text-right">Preferred color format: </label>
+                <div class="col-xs-9 btn-group">
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-control-group="config_colorformat" data-name="config_colorformat" data-value="rgb">rgb</button>
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-control-group="config_colorformat" data-name="config_colorformat" data-value="hsl">hsl</button>
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-control-group="config_colorformat" data-name="config_colorformat" data-value="hex">hex</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-xs-3 text-right">Color picker visible sliders: </label>
+                <div class="col-xs-9 btn-group">
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-name="config_colorpicker_hsl">hsl</button>
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-name="config_colorpicker_rgb">rgb</button>
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-name="config_colorpicker_cie">cie</button>
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-name="config_colorpicker_opacity">opacity</button>
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-name="config_colorpicker_swatches">color swatches</button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-xs-3 text-right">Accordion blocks: </label>
+                <div class="col-xs-9 btn-group">
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-control-group="config_mixedstoppointunits" data-name="config_accordion" data-value="true">enabled</button>
+                  <button class="btn btn-default btn-sm less-live-editor-controller" data-control-group="config_mixedstoppointunits" data-name="config_accordion" data-value="false">disabled</button>
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="source-modal" class="modal bs-modal-lg">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Source Code</h4>
+          </div>
+          <div class="modal-body expanded noscroll">
+            <textarea class="less-live-editor-html-source"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="http://bootstrap-live-customizer.com/dist/jquery-1.11.2.min.js"></script>
+    <script src="http://bootstrap-live-customizer.com/dist/lessjs.min.js"></script>
+    <script src="http://bootstrap-live-customizer.com/libraries/notify.min.js"></script>
+    <script src="http://bootstrap-live-customizer.com/dist/dependencies.min.js?v1.5.3"></script>
+    <script src="http://bootstrap-live-customizer.com/dist/live-less-theme-customizer.min.js?v1.5.3"></script>
+
+    <script>
+      var customizer = LiveLessThemeCustomizer({
+        context: 'http://bootstrap-live-customizer.com/bootstrap',
+        htmlsrc: 'http://bootstrap-live-customizer.com/preview.php',
+        forcedcolors: {
+          'headings-color': '@text-color'
+        },
+        lessvariablessrc: 'http://bootstrap-live-customizer.com/bootstrap-3.3.7/less/variables.less'
+      });
+
+      var $thememodal = jQuery('#thememodal'),
+              themeListAlreadyGenerated = false,
+              notifyerror = {
+                autoHideDelay: 10000,
+                globalPosition: 'top left',
+                className: 'error'
+              };
+
+
+      $thememodal.on('shown.bs.modal', function () {
+        generateBootswatchThemeList();
+      });
+
+      function generateBootswatchThemeList() {
+        if (themeListAlreadyGenerated) {
+          return;
+        }
+
+        themeListAlreadyGenerated = true;
+
+        jQuery.get('https://bootswatch.com/api/3.json', function (data) {
+          var themes = data.themes,
+                  $ul = jQuery('<ul class="theme-list clearfix"></ul>');
+
+          themes.forEach(function (value) {
+            /*select.append(jQuery("<option />")
+             .val(index)
+             .text(value.name));*/
+
+            var $li = jQuery('<li class="theme clearfix">' +
+                    '<img class="theme-thumbnail" src="' + value.thumbnail + '">' +
+                    '<span class="theme-name">' + value.name + '</span>' +
+                    '<span class="description">' + value.description + '</span>' +
+                    '<button class="btn btn-primary pull-right">Load</button>' +
+                    '</li>');
+
+            $li.data('theme', value);
+
+            $ul.append($li);
+          });
+
+          jQuery('.modal-body', $thememodal).html($ul);
+
+          jQuery('li.theme', $thememodal).on('click', function () {
+            var theme = jQuery(this).data('theme');
+
+            var $btn = jQuery(this).find('.btn');
+
+            loadTheme(theme, $btn);
+          });
+
+        }, 'json').fail(function () {
+          jQuery.notify('Error initializing bootswatch themes!', 'error');
+        });
+      }
+
+      function loadTheme(theme, $btn) {
+        $btn.button('loading');
+
+        var themeless, variablesless,
+                successful = true;
+
+        $.when(
+                jQuery.ajax({
+                  url: 'http://bootstrap-live-customizer.com/libraries/proxy.php',
+                  data: {url: theme.less},
+                  type: 'GET',
+                  dataType: 'json',
+                  success: function (data) {
+                    if (data.contents === false) {
+                      $btn.button('reset');
+                      jQuery.notify('Error loading theme.less, please try again!', notifyerror);
+                      successful = false;
+                      return false;
+                    }
+                    themeless = data.contents;
+                  }
+                }),
+                jQuery.ajax({
+                  url: 'http://bootstrap-live-customizer.com/libraries/proxy.php',
+                  data: {url: theme.lessVariables},
+                  type: 'GET',
+                  dataType: 'json',
+                  success: function (data) {
+                    if (data.contents === false) {
+                      $btn.button('reset');
+                      jQuery.notify('Error loading variables.less, please try again!', notifyerror);
+                      successful = false;
+                      return false;
+                    }
+                    variablesless = data.contents;
+                  }
+                })
+                ).then(
+                function () {
+                  // success
+                  if (successful) {
+                    customizer.importLessVariablesFromString(variablesless);
+                    customizer.setCustomLessCode(themeless);
+                    $btn.button('reset');
+                  }
+                },
+                function () {
+                  // failure
+                  $btn.button('reset');
+                  jQuery.notify('Something went wrong. Please try again!', notifyerror);
+                }
+        );
+      }
+
+    </script>

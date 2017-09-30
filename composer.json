@@ -1,0 +1,23 @@
+{
+    "name": "angel/codereactor",
+    "description": "Fork of ci_bootstrap_3",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Angel Aces",
+            "email": "arjb23@gmail.com"
+        }
+    ],
+    "require": {
+		"firebase/php-jwt": "^3.0",
+        "google/recaptcha": "~1.1",
+        "league/csv": "^7.0",
+        "mailgun/mailgun-php": "1.8.*",
+        "zircote/swagger-php": "^2.0",
+        "videojs/video.js": "^6.1",
+        "hddbogdan/react-integration-bundle": "dev-master",
+        "hotrush/reactphp-mysql": "v0.3.4",
+        "php-console/php-console": "^3.1"
+	}
+}

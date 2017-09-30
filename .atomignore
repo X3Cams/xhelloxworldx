@@ -1,0 +1,40 @@
+.DS_Store
+
+### Bower ###
+.bower-cache
+.bower-registry
+.bower-tmp
+
+### Node ###
+npm-debug.log
+
+### Composer ###
+composer.json
+
+
+### https://github.com/github/gitignore/blob/master/CodeIgniter.gitignore ###
+*/logs/log-*.php
+*/logs/!index.html
+*/cache/*
+*/cache/!index.html
+*/cache/!.htaccess
+
+## Source map files (local gulp tasks will still produce .map for debug use) ###
+*.map
+
+### SQL backup files ###
+sql/backup/*
+/!index.html
+
+### test stuff ###
+webpack.config.js
+test.js
+script-compiled.js
+main.js
+App.jsx
+blank.php
+bower.jsonpp
+composer.json
+index.js
+LICENSE
+LICENSE.md

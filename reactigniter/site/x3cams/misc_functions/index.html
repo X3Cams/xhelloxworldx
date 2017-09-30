@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="AngelXAces">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Misc Functions - CodeReactor Responsive Codeigniter</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../assets/extra.css" rel="stylesheet">
+  <link href="../../assets/styles/default.css" rel="stylesheet">
+  <link href="../../assets/styles/monokai-sublime.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Misc Functions";
+    var mkdocs_page_input_path = "x3cams/misc_functions.md";
+    var mkdocs_page_url = "/x3cams/misc_functions/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> CodeReactor Responsive Codeigniter</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../about/">BERT</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">X3Cams</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../">X3Cams</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../home/">Homepage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../profiles/">Model Room</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../video/">Video Players</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Misc Functions</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#misc-functions">Misc Functions</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#some-of-shit-that-actually-worked">Some of shit that actually worked</a></li>
+        
+            <li><a class="toctree-l4" href="#jwalk-json_decode-array_walk">jWalk: json_decode + array_walk</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Angel</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../angel/">About Angel</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../angel/messages/">Notes, Thoughts, Things</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../The Shittiest Docs/">The Shittiest Docs</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">CodeReactor Responsive Codeigniter</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>X3Cams &raquo;</li>
+        
+      
+    
+    <li>Misc Functions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/angelxaces/Angel-s-CodeReactor/"> Edit on Angel's CodeReactor</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="misc-functions">Misc Functions</h1>
+<h3 id="some-of-shit-that-actually-worked">Some of shit that actually worked</h3>
+<pre><code class="php">//returns the json file as individual lines of independant json
+   function json_oneline(){
+       $url = 'https://chaturbate.com/affiliates/api/onlinerooms/?format=json&amp;wm=KZ7tX';
+       $gender_options = array('f', 'm', 'c', 't');
+       $jcontent = file_get_contents($url);
+       $jtemp = tmpfile();
+       fwrite($jtemp, $jcontent);
+       $dil = '},';
+       $fnd = array('},', '\'{');
+       $rep = array('}];},', '\'[{');
+       $jfile =explode($dil, str_ireplace($fnd, $rep, htmlspecialchars($jcontent)));
+       return $jfile;
+       //array_multisort($jfile, $gender_options, SORT_REGULAR, $stdin-&gt;num_users, SORT_DESC);
+       //$jfile-&gt;offsetSet(NULL, 'gender');
+       //var_dump($jfile-&gt;offsetGet());
+   }
+</code></pre>
+
+<h2 id="jwalk-json_decode-array_walk">jWalk: json_decode + array_walk</h2>
+<h3 id="shit-doesnt-get-more-real-than-the-price-you-pay-to-jwalk">Shit doesn't get more real than the price you pay to jWalk();</h3>
+<p>They say the only people to come out on the other side were never on our's to begin with. I heard they have no souls and are as cold as ice. So, Conadians who drive commuter cars or mini-vans... Canadians. </p>
+<pre><code class="php">    function jwalk($var) {
+
+    if($var-&gt;gender == 'f'){
+        echo '&lt;ul&gt;';
+        echo '&lt;li&gt;&lt;iframe src=&quot;https://chaturbate.com/fullvideo/?b='.$var-&gt;username.'&quot; width=&quot;600&quot; height=&quot;500&quot;&gt;&lt;iframe&gt;&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;username.'&lt;ul&gt;';
+        echo '&lt;li&gt;'.$var-&gt;room_subject.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;is_hd.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;is_new.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;seconds_online.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;gender.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;recorded.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;current_show.'&lt;/li&gt;';
+        //echo '&lt;li&gt;'.$var-&gt;chat_room_url.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;image_url.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;image_url_360x270.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;block_from_states.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;block_from_countries.'&lt;/li&gt;';
+        //echo '&lt;li&gt;'.$var-&gt;iframe_embed.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;num_users.'&lt;/li&gt;';
+        echo '&lt;li&gt;'.$var-&gt;num_followers.'&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;';
+        echo '&lt;/ul&gt;';
+        }
+    }
+ ```
+##Items: formatting with PHP + HTML + JSON
+####Itemized shit that make it not look like shit. Well, not like your shit!
+This is one I'll be using in some capacity.
+```php
+    function items($val) {
+        $url = urlencode($val-&gt;chat_room_url_revshare);
+        //$video = str_replace('bgcolor=&quot;white&quot;', 'bgcolor=&quot;transparent&quot;', $url);
+        //$video = $val-&gt;username;
+        $video = $val-&gt;username;
+        $item = '&lt;a data-target=&quot;#image-modal&quot; data-toggle=&quot;modal&quot; data-img=&quot;'.$val-&gt;image_url_360x270.'&quot; data-username=&quot;'.$val-&gt;username.'&quot; data-displayname=&quot;'.$val-&gt;display_name.'&quot; data-birthday=&quot;'.$val-&gt;birthday.'&quot; data-age=&quot;'.$val-&gt;age.'&quot; data-gender=&quot;'.$val-&gt;gender.'&quot; data-subject=&quot;'.$val-&gt;room_subject.'&quot;';
+        $item .= ' data-hd=&quot;no&quot; data-duration=&quot;'.$val-&gt;seconds_online.'&quot; data-lang=&quot;'.$val-&gt;spoken_languages.'&quot; data-show=&quot;'.$val-&gt;current_show.'&quot; data-video=&quot;'.$video.'&quot;&gt;';
+        $item .= '&lt;img src=&quot;'.$val-&gt;image_url.'&quot; alt=&quot;'.$val-&gt;username.'\'s Room&quot; style=&quot;width: 100%&quot;&gt;';
+        $item .= '&lt;span class=&quot;caption&quot;&gt;'.$val-&gt;username.'&lt;/span&gt;&lt;/a&gt;';
+        //&amp;disable_sound=1&amp;embed_video_only=1
+        return $item;
+
+    }
+ ```
+ ##Shit that obviously wouldn't work but tried anyway
+ Remember the time you told your mom you were going to a friends house that you were going to a friend's house who you were allowed to go see but you were holding a video game that only the friend you weren't supposed to visit, had a console for? It's kind of like that. 
+
+ For anyone that wasn't around for the days where we borrowed and traded video games, here's a better one for you. Rememnber that time where you were confused by an analogy...
+ ```php   
+    //element('username', $jfile);
+    //print_r(array_walk($jfile-&gt;gender-&gt;offsetGet('f'), 'items'));
+        $gender =array();
+        $male =array();
+        $female=array();
+        $couple=array();
+        $trans=array();
+
+    //echo &quot;&lt;iframe src='https://chaturbate.com/affiliates/in/?tour=9oGW&amp;campaign=KZ7tX&amp;track=embed&amp;room=&quot;.$var-&gt;username.&quot;&amp;bgcolor=transparent&amp;disable_sound=1&amp;embed_video_only=1&amp;target=_parent' height=600 width=800 style='border: none;'&gt;&lt;/iframe&gt;&quot;;
+            //$type = array($var-&gt;is_new, $var-&gt;num_followers, $var-&gt;iframe_embed_vo, $var-&gt;display_name, $var-&gt;recorded, $var-&gt;iframe_embed_revshare, $var-&gt;chat_room_url, $var-&gt;location, $var-&gt;block_from_states, $var-&gt;chat_room_url_revshare, $var-&gt;username, $var-&gt;spoken_languages, $var-&gt;image_url_360x270, $var-&gt;current_show, $var-&gt;birthday, $var-&gt;is_hd, $var-&gt;block_from_countries, $var-&gt;seconds_online, $var-&gt;gender, $var-&gt;age, $var-&gt;num_users, $var-&gt;image_url, $var-&gt;room_subject);&lt;i class=&quot;fa&quot;&gt;&lt;/i&gt;
+    function gender_list($var){
+        $male =array();
+        $female=array();
+        $couple=array();
+        $trans=array();
+        $gender = array($female, $male, $couple, $trans);
+        switch ($var-&gt;username-&gt;gender) {
+            case $var-&gt;username-&gt;gender == 'f':
+                    array_push($female, $var-&gt;username);
+                break;
+            case $var-&gt;username-&gt;gender == 'm':
+                array_push($male, $var-&gt;username);
+                break;
+            case $var-&gt;username-&gt;gender == 'c':
+                array_push($couple, $var-&gt;username);
+                break;
+            case $var-&gt;username-&gt;gender == 't':
+                array_push($trans, $var-&gt;username);
+                break;
+        }
+
+        return $gender;
+    }
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../angel/" class="btn btn-neutral float-right" title="About Angel">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../video/" class="btn btn-neutral" title="Video Players"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>2017 - Angel Aces - All Rights Reserved</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../video/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../angel/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+      <script src="../../assets/custom.js"></script>
+      <script src="../../assets/highlight.pack.js"></script>
+
+</body>
+</html>

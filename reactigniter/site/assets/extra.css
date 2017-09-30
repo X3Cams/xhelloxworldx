@@ -1,0 +1,17 @@
+pre {
+  background-color: transparent;
+  border: none;
+}
+
+code {
+  background-color: transparent;
+}
+
+/*ul.current {*/
+    /*background-color: rgb(166,226,46);*/
+    
+/*}*/
+
+.subnav > .current{
+    background-color: rgb(0, 255, 0);
+}

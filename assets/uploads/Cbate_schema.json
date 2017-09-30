@@ -1,0 +1,309 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "additionalItems": true,
+    "definitions": {},
+    "id": "https://chaturbate.com/affiliates/api/onlinerooms/?format=json&wm=KZ7tX",
+    "items": {
+        "additionalProperties": true,
+        "id": "/items",
+        "properties": {
+            "age": {
+                "default": 21,
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    21
+                ],
+                "exclusiveMaximum": false,
+                "exclusiveMinimum": false,
+                "id": "/items/properties/age",
+                "title": "The Age Schema",
+                "type": "integer"
+            },
+            "birthday": {
+                "default": "1996-04-03",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "1996-04-03"
+                ],
+                "id": "/items/properties/birthday",
+                "title": "The Birthday Schema",
+                "type": "string"
+            },
+            "block_from_countries": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    ""
+                ],
+                "id": "/items/properties/block_from_countries",
+                "title": "The Block_from_countries Schema",
+                "type": "string"
+            },
+            "block_from_states": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    ""
+                ],
+                "id": "/items/properties/block_from_states",
+                "title": "The Block_from_states Schema",
+                "type": "string"
+            },
+            "chat_room_url": {
+                "default": "https://chaturbate.com/affiliates/in/?tour=yiMH&campaign=KZ7tX&track=default&room=secretgoddess0",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "https://chaturbate.com/affiliates/in/?tour=yiMH&campaign=KZ7tX&track=default&room=secretgoddess0"
+                ],
+                "id": "/items/properties/chat_room_url",
+                "title": "The Chat_room_url Schema",
+                "type": "string"
+            },
+            "chat_room_url_revshare": {
+                "default": "https://chaturbate.com/affiliates/in/?tour=LQps&campaign=KZ7tX&track=default&room=secretgoddess0",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "https://chaturbate.com/affiliates/in/?tour=LQps&campaign=KZ7tX&track=default&room=secretgoddess0"
+                ],
+                "id": "/items/properties/chat_room_url_revshare",
+                "title": "The Chat_room_url_revshare Schema",
+                "type": "string"
+            },
+            "current_show": {
+                "default": "public",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "public"
+                ],
+                "id": "/items/properties/current_show",
+                "title": "The Current_show Schema",
+                "type": "string"
+            },
+            "display_name": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    ""
+                ],
+                "id": "/items/properties/display_name",
+                "title": "The Display_name Schema",
+                "type": "string"
+            },
+            "gender": {
+                "default": "f",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "f"
+                ],
+                "id": "/items/properties/gender",
+                "title": "The Gender Schema",
+                "type": "string"
+            },
+            "iframe_embed": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    ""
+                ],
+                "id": "/items/properties/iframe_embed",
+                "title": "The Iframe_embed Schema",
+                "type": "string"
+            },
+            "iframe_embed_revshare": {
+                "default": "",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    ""
+                ],
+                "id": "/items/properties/iframe_embed_revshare",
+                "title": "The Iframe_embed_revshare Schema",
+                "type": "string"
+            },
+            "image_url": {
+                "default": "https://roomimg.stream.highwebmedia.com/ri/secretgoddess0.jpg",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "https://roomimg.stream.highwebmedia.com/ri/secretgoddess0.jpg"
+                ],
+                "id": "/items/properties/image_url",
+                "title": "The Image_url Schema",
+                "type": "string"
+            },
+            "image_url_360x270": {
+                "default": "https://roomimg.stream.highwebmedia.com/ri/secretgoddess0.jpg",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "https://roomimg.stream.highwebmedia.com/ri/secretgoddess0.jpg"
+                ],
+                "id": "/items/properties/image_url_360x270",
+                "title": "The Image_url_360x270 Schema",
+                "type": "string"
+            },
+            "is_hd": {
+                "default": true,
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    true
+                ],
+                "id": "/items/properties/is_hd",
+                "title": "The Is_hd Schema",
+                "type": "boolean"
+            },
+            "is_new": {
+                "default": false,
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    false
+                ],
+                "id": "/items/properties/is_new",
+                "title": "The Is_new Schema",
+                "type": "boolean"
+            },
+            "location": {
+                "default": "Wonderland, Findout",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "Wonderland, Findout"
+                ],
+                "id": "/items/properties/location",
+                "title": "The Location Schema",
+                "type": "string"
+            },
+            "num_followers": {
+                "default": 217547,
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    217547
+                ],
+                "exclusiveMaximum": false,
+                "exclusiveMinimum": false,
+                "id": "/items/properties/num_followers",
+                "title": "The Num_followers Schema",
+                "type": "integer"
+            },
+            "num_users": {
+                "default": 12053,
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    12053
+                ],
+                "exclusiveMaximum": false,
+                "exclusiveMinimum": false,
+                "id": "/items/properties/num_users",
+                "title": "The Num_users Schema",
+                "type": "integer"
+            },
+            "recorded": {
+                "default": "false",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "false"
+                ],
+                "id": "/items/properties/recorded",
+                "title": "The Recorded Schema",
+                "type": "string"
+            },
+            "room_subject": {
+                "default": "hi! wink ass every goal/deepThroat toy every 5 goal/@10 finger ass )(@20 dildo pussy)(@30 finger pussy %26 ass)(@40 ride big dildo)(@ 50 anal plug)(@60 dp)(@70 cum show) [150 tokens remaining]",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "hi! wink ass every goal/deepThroat toy every 5 goal/@10 finger ass )(@20 dildo pussy)(@30 finger pussy %26 ass)(@40 ride big dildo)(@ 50 anal plug)(@60 dp)(@70 cum show) [150 tokens remaining]"
+                ],
+                "id": "/items/properties/room_subject",
+                "title": "The Room_subject Schema",
+                "type": "string"
+            },
+            "seconds_online": {
+                "default": 8571,
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    8571
+                ],
+                "exclusiveMaximum": false,
+                "exclusiveMinimum": false,
+                "id": "/items/properties/seconds_online",
+                "title": "The Seconds_online Schema",
+                "type": "integer"
+            },
+            "spoken_languages": {
+                "default": "English",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "English"
+                ],
+                "id": "/items/properties/spoken_languages",
+                "title": "The Spoken_languages Schema",
+                "type": "string"
+            },
+            "tags": {
+                "additionalItems": true,
+                "id": "/items/properties/tags",
+                "items": {},
+                "type": "array",
+                "uniqueItems": true
+            },
+            "username": {
+                "default": "secretgoddess0",
+                "description": "An explanation about the purpose of this instance.",
+                "enum": [
+                    null,
+                    "secretgoddess0"
+                ],
+                "id": "/items/properties/username",
+                "title": "The Username Schema",
+                "type": "string"
+            }
+        },
+        "required": [
+            "is_new",
+            "num_followers",
+            "iframe_embed",
+            "display_name",
+            "image_url_360x270",
+            "recorded",
+            "iframe_embed_revshare",
+            "chat_room_url",
+            "location",
+            "block_from_states",
+            "chat_room_url_revshare",
+            "username",
+            "spoken_languages",
+            "tags",
+            "current_show",
+            "birthday",
+            "is_hd",
+            "block_from_countries",
+            "seconds_online",
+            "gender",
+            "age",
+            "num_users",
+            "image_url",
+            "room_subject"
+        ],
+        "type": "object"
+    },
+    "type": "array",
+    "uniqueItems": true
+}

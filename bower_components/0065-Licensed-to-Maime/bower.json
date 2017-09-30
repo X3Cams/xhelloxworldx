@@ -1,0 +1,109 @@
+[{
+  "level": "action",
+  "id": "copy",
+  "message": "./bower_components/0065-Licensed-to-Maime",
+  "data": {
+    "src": "./bower_components/0065-Licensed-to-Maime",
+    "dst": "./var/*/bower/*-*-r1ipis",
+    "endpoint": {
+      "name": "",
+      "source": "./",
+      "target": "*"
+    },
+    "resolver": {
+      "name": "0065-Licensed-to-Maime",
+      "source": "./bower_components/0065-Licensed-to-Maime",
+      "target": "*"
+    }
+  }
+}, {
+  "level": "info",
+  "id": "resolved",
+  "message": "./bower_components/0065-Licensed-to-Maime",
+  "data": {
+    "endpoint": {
+      "name": "",
+      "source": "./",
+      "target": "*"
+    },
+    "resolver": {
+      "name": "0065-licensed-to-maim",
+      "source": "./bower_components/0065-Licensed-to-Maime",
+      "target": "*"
+    }
+  }
+}, {
+  "level": "action",
+  "id": "install",
+  "message": "0065-licensed-to-maim",
+  "data": {
+    "endpoint": {
+      "name": "0065-licensed-to-maim",
+      "source": "./",
+      "target": "*"
+    },
+    "canonicalDir": "/var/*/bower/*-*-r1ipis",
+    "pkgMeta": {
+      "name": "0065-licensed-to-maim",
+      "authors": [
+        "Angel \"AngelXAces\" Aces <arjb23@gmail.com>"
+      ],
+      "description": "A concoction of various SVG graphics",
+      "main": "style.css",
+      "keywords": [
+        "0065-licensed-maim",
+        "svg",
+        "graphics"
+      ],
+      "license": "MIT",
+      "homepage": "http://example.com",
+      "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+      ],
+      "_source": "./bower_components/0065-Licensed-to-Maime",
+      "_target": "*"
+    },
+    "dependencies": {},
+    "nrDependants": 0
+  }
+}]
+{
+  "0065-licensed-to-maim": {
+    "endpoint": {
+      "name": "0065-licensed-to-maim",
+      "source": "./",
+      "target": "*"
+    },
+    "canonicalDir": "./bower_components/0065-Licensed-to-Maime/bower_components/0065-licensed-to-maim",
+    "pkgMeta": {
+      "name": "0065-licensed-to-maim",
+      "authors": [
+        "Angel \"AngelXAces\" Aces <arjb23@gmail.com>"
+      ],
+      "description": "A concoction of various SVG graphics",
+      "main": "style.css",
+      "keywords": [
+        "0065-licensed-maim",
+        "svg",
+        "graphics"
+      ],
+      "license": "MIT",
+      "homepage": "http://example.com",
+      "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+      ],
+      "_source": "./bower_components/0065-Licensed-to-Maime",
+      "_target": "*"
+    },
+    "dependencies": {},
+    "nrDependants": 0
+  }
+}
